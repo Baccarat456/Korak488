@@ -1,0 +1,54 @@
+{
+  "title": "Input schema of the Pinterest \"Aesthetic\" Downloader Scraper",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "startUrls": {
+      "title": "Start URLs",
+      "type": "array",
+      "description": "Pinterest board, search, or profile URLs to start from (e.g. https://www.pinterest.com/search/pins/?q=aesthetic). Use JSON/endpoint URLs if available.",
+      "editor": "requestListSources",
+      "prefill": [
+        {
+          "url": "https://www.pinterest.com/search/pins/?q=aesthetic"
+        }
+      ]
+    },
+    "maxRequestsPerCrawl": {
+      "title": "Max requests per crawl",
+      "type": "integer",
+      "description": "Maximum number of HTTP requests the crawler will make.",
+      "default": 200
+    },
+    "maxPinsPerStartUrl": {
+      "title": "Max pins per start URL",
+      "type": "integer",
+      "description": "Limit number of pins to extract per start URL.",
+      "default": 500
+    },
+    "downloadImages": {
+      "title": "Download images",
+      "type": "boolean",
+      "description": "If true, download image files to the default Key-Value store (recommended).",
+      "default": true
+    },
+    "imageKeyPrefix": {
+      "title": "KV image key prefix",
+      "type": "string",
+      "description": "Prefix used for keys when saving images to the Key-Value store.",
+      "default": "pinterest_image_"
+    },
+    "pinLinkSelector": {
+      "title": "Pin link CSS selector",
+      "type": "string",
+      "description": "Optional CSS selector to find pin links on search/board pages. The starter uses common fallbacks.",
+      "default": "a[href*=\"/pin/\"]"
+    },
+    "userAgent": {
+      "title": "User-Agent header (optional)",
+      "type": "string",
+      "description": "Custom User-Agent for requests. Use a descriptive UA to be polite.",
+      "default": "pinterest-aesthetic-downloader (+https://example.com)"
+    }
+  }
+}

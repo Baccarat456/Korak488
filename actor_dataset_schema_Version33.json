@@ -1,0 +1,82 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "pinId": {
+      "type": "string",
+      "title": "Pin ID"
+    },
+    "title": {
+      "type": "string",
+      "title": "Pin title / description"
+    },
+    "author": {
+      "type": "string",
+      "title": "Author / pinner"
+    },
+    "board": {
+      "type": "string",
+      "title": "Board name"
+    },
+    "imageUrl": {
+      "type": "string",
+      "title": "Image URL"
+    },
+    "imageKvKey": {
+      "type": "string",
+      "title": "KV key where image is saved (if downloaded)"
+    },
+    "tags": {
+      "type": "array",
+      "title": "Tags / topics"
+    },
+    "saves": {
+      "type": "integer",
+      "title": "Number of saves"
+    },
+    "sourceUrl": {
+      "type": "string",
+      "title": "Pin URL"
+    },
+    "scrapedAt": {
+      "type": "string",
+      "title": "Scraped at (ISO)"
+    }
+  },
+  "views": {
+    "overview": {
+      "title": "Overview",
+      "transformation": {
+        "fields": ["pinId", "title", "author", "board", "imageUrl", "imageKvKey"]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "pinId": {
+            "label": "Pin ID",
+            "format": "text"
+          },
+          "title": {
+            "label": "Title",
+            "format": "text"
+          },
+          "author": {
+            "label": "Author",
+            "format": "text"
+          },
+          "board": {
+            "label": "Board",
+            "format": "text"
+          },
+          "imageUrl": {
+            "label": "Image",
+            "format": "link"
+          },
+          "imageKvKey": {
+            "label": "KV key",
+            "format": "text"
+          }
+        }
+      }
+    }
+  }
+}

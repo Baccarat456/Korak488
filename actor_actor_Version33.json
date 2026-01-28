@@ -1,0 +1,17 @@
+{
+  "actorSpecification": 1,
+  "name": "pinterest-aesthetic-downloader-scraper",
+  "title": "Pinterest \"Aesthetic\" Downloader Scraper",
+  "description": "Downloads 'aesthetic' Pinterest pins (images) and saves metadata. Starter uses CheerioCrawler; Playwright fallback recommended for JS-heavy Pinterest pages.",
+  "version": "0.0",
+  "meta": {
+    "templateId": "ai-generated-actor",
+    "generatedBy": "gpt-4o-mini"
+  },
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  },
+  "dockerfile": "../Dockerfile"
+}
